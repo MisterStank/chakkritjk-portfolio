@@ -1,19 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { BsArrowRight, BsLinkedin, BsMailbox2 } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import profileImg from "@/public/luffy.jpg"
+import { CgMail } from "react-icons/cg";
+import toast from "react-hot-toast";
+import copy from "copy-to-clipboard";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [isMouseOver,setIsMouseOver] = useState(false);
+
+  const copyToClipboard = () => {
+    let copyText = 'mchakkrit2002@gmail.com'
+    let isCopy = copy(copyText);
+    if (isCopy) {
+      toast.success("Email's been copied to your clipboard.");
+    }
+  };
 
   return (
     <section
@@ -71,7 +83,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-6 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -79,15 +91,23 @@ export default function Intro() {
         }}
       >
         <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            setActiveSection("Contact");
+          href="#home"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-white hover:text-gray-900 hover:outline-gray-900 active:scale-105 transition"
+          /*onClick={() => {
+            //setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
-          }}
+          }}*/
+          onClick={copyToClipboard}
+          onMouseOver={(e)=>setIsMouseOver(true)}
+          onMouseLeave={(e)=>setIsMouseOver(false)}
         >
-          Contact me here{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          {!isMouseOver && ( 
+            <span>Contact me here{" "}</span>)
+          }
+          {isMouseOver && ( 
+            <span>mchakkrit2002@gmail.com{" "}</span>)
+          }
+          <CgMail className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
         <a
