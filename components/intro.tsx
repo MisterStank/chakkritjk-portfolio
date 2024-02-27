@@ -91,7 +91,7 @@ export default function Intro() {
         }}
       >
         <Link
-          href="#home"
+          href="mailto:mchakkrit2002@gmail.com"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-white hover:text-gray-900 hover:outline-gray-900 active:scale-105 transition"
           /*onClick={() => {
             //setActiveSection("Contact");
