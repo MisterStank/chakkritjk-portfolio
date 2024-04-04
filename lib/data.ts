@@ -1,8 +1,8 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import bodydoughImg from "@/public/bodydough.png";
+import bookstoreImg from "@/public/bookstore.png";
+import animehubImg from "@/public/animehub.png";
 
 export const links = [
   {
@@ -43,6 +43,22 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: "Book Store",
+    description: "A book store website using MERN stack",
+    tags: ["React", "JavaScript", "Tailwind", "Express" ,"NodeJS" ,"MongoDB"],
+    imageUrl: bookstoreImg,
+    github: "https://github.com/MisterStank/BookStore-MERN",
+    demo: "https://m-book-store.vercel.app"
+  },
+  {
+    title: "Anime Hub",
+    description: "A website that fetch data from Anime API",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Framer Motion"],
+    imageUrl: animehubImg,
+    github: "https://github.com/MisterStank/Anime-Hub",
+    demo: "https://m-anime-hub.vercel.app"
+  },
   {
     title: "Bodydough",
     description: "A website to calculate your BMI and WHR.",

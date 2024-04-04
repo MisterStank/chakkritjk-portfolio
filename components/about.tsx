@@ -19,7 +19,7 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor velit dolores odio. Praesentium quis voluptatibus ea, soluta doloribus obcaecati dolores numquam tenetur iusto atque id voluptate asperiores! Illum, ea!
       </p>
     </motion.section>
   );
