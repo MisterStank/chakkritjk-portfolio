@@ -48,6 +48,8 @@ export const projectsData = [
     description: "A website to calculate your BMI and WHR.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
     imageUrl: bodydoughImg,
+    github: "https://github.com/MisterStank/bodydough-project",
+    demo: "https://bodydough-project.vercel.app"
   },
 ] as const;
 
