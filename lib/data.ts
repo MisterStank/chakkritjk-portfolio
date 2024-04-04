@@ -4,7 +4,6 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import bodydoughImg from "@/public/bodydough.png";
 
-
 export const links = [
   {
     name: "Home",
@@ -22,7 +21,7 @@ export const links = [
     name: "Skills",
     hash: "#skills",
   },
- /* {
+  /* {
     name: "Experience",
     hash: "#experience",
   },
@@ -46,8 +45,7 @@ export const experiencesData = [
 export const projectsData = [
   {
     title: "Bodydough",
-    description:
-      "A website to calculate your BMI and WHR.",
+    description: "A website to calculate your BMI and WHR.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
     imageUrl: bodydoughImg,
   },
@@ -61,10 +59,38 @@ export const skillsData = [
   "React",
   "Next.js",
   "Node.js",
+  "Express",
   "Git",
+  "Git Hub",
   "Tailwind",
   "MongoDB",
-  "Redux",
+  "Postman",
   "Python",
-  "Framer Motion",
+  "MUI",
+  "VScode",
+  "Figma",
+  "C",
+  "C++",
+] as const;
+
+export const iconData = [
+  "html",
+  "css",
+  "javascript",
+  "typescript",
+  "react",
+  "nextjs",
+  "nodejs",
+  "express",
+  "git",
+  "github",
+  "tailwind",
+  "mongodb",
+  "postman",
+  "python",
+  "mui",
+  "vscode",
+  "figma",
+  "c",
+  "cpp",
 ] as const;
