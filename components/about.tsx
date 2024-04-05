@@ -19,7 +19,14 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor velit dolores odio. Praesentium quis voluptatibus ea, soluta doloribus obcaecati dolores numquam tenetur iusto atque id voluptate asperiores! Illum, ea!
+        My name is Chakkrit Jongkraijak. I am a third-year computer engineering
+        student at Chulalongkorn University. With a strong interest in
+        technology and software development, I am eager to explore chances in
+        this field. Throughout my academic career, I have received experience in
+        a variety of programming languages, including JavaScript, TypeScript,
+        HTML, CSS, Python, SQL, C, and C++, as well as numerous frameworks and
+        tools. I have also gained hands-on experience in software development
+        through personal projects and coursework.
       </p>
     </motion.section>
   );
