@@ -21,11 +21,11 @@ export const links = [
     name: "Skills",
     hash: "#skills",
   },
-  /* {
+  {
     name: "Experience",
     hash: "#experience",
   },
-  {
+  /*{
     name: "Contact",
     hash: "#contact",
   },*/
@@ -33,12 +33,12 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "M company",
-    location: "Miami, FL",
+    title: "Gosoft (Thailand) Co., Ltd.",
+    location: "Software Engineer Intern",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Summer Internship in Online Unit of Gosoft company (under CPALL)",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "June 2024 - July 2024",
   },
 ] as const;
 
@@ -89,6 +89,7 @@ export const skillsData = [
   "Figma",
   "C",
   "C++",
+  "AWS"
 ] as const;
 
 export const iconData = [
@@ -111,4 +112,5 @@ export const iconData = [
   "figma",
   "c",
   "cpp",
+  "aws"
 ] as const;

@@ -79,7 +79,7 @@ export default function Intro() {
         <div className="font-semibold">A Computer Engineering Student </div> 
         <div>at Chulalongkorn University 🇹🇭 </div>
         My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span className="underline">Full-stack Web Development</span>.
       </motion.h1>
 
       <motion.div

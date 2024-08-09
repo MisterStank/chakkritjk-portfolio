@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import ParallaxStars from "@/components/ParallaxStars";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,14 +27,19 @@ export default function RootLayout({
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
+            <div className="fixed inset-0 z-0 opacity-20">
+              <ParallaxStars />
+            </div>
             <Header />
-            {children}
+            <main className="relative z-10">
+              {children}
+              <ThemeSwitch />
+            </main>
             <Footer />
             <Toaster
               position="bottom-center"
               reverseOrder={false}
             />
-            <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
