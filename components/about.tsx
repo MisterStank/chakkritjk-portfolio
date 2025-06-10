@@ -19,8 +19,8 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        My name is Chakkrit Jongkraijak. I am a fourth-year computer engineering
-        student at Chulalongkorn University. With a strong interest in
+        My name is Chakkrit Jongkraijak. I am a fresh graduate from computer engineering 
+        at Chulalongkorn University. With a strong interest in
         technology and software development, I am eager to explore chances in
         this field. Throughout my academic career, I have received experience in
         a variety of programming languages, including JavaScript, TypeScript,

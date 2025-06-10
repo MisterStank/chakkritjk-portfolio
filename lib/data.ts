@@ -3,6 +3,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import bodydoughImg from "@/public/bodydough.png";
 import bookstoreImg from "@/public/bookstore.png";
 import animehubImg from "@/public/animehub.png";
+import productstoreImg from "@/public/productstore.png";
 
 export const links = [
   {
@@ -43,6 +44,14 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: "Products Store",
+    description: "Products Store Website using PERN stack",
+    tags: ["PostgreSQL","React", "JavaScript", "Tailwind", "Express" ,"NodeJS"],
+    imageUrl: productstoreImg,
+    github: "https://github.com/MisterStank/product-store-pern",
+    demo: "https://m-product-store.onrender.com/"
+  },
   {
     title: "Book Store",
     description: "A book store website using MERN stack",

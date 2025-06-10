@@ -76,7 +76,8 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <div className="font-bold">Hello, I'm Chakkrit Jongkraijak. </div>
-        <div className="font-semibold">A Computer Engineering Student </div> 
+        <div className="font-semibold">A Fresh Graduate  </div>
+        <div>from Computer Engineering </div> 
         <div>at Chulalongkorn University 🇹🇭 </div>
         My focus is{" "}
         <span className="underline">Full-stack Web Development</span>.
