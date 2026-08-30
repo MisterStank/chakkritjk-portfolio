@@ -2,14 +2,153 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  --line-color: #e5e7eb;
+/* ---------------------------------------------------------------------------
+   Design tokens — dark is the primary look, light is a supported override.
+--------------------------------------------------------------------------- */
+:root {
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --surface-2: #efeff1;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  --fg: #18181b;
+  --fg-muted: #52525b;
+  --fg-subtle: #8b8b94;
+
+  --accent: #059669;
+  --accent-2: #6366f1;
+  --accent-contrast: #ffffff;
+  --accent-glow: rgba(5, 150, 105, 0.16);
+
+  --grid-dot: rgba(0, 0, 0, 0.06);
 }
 
 html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+  --bg: #0a0a0b;
+  --surface: #141416;
+  --surface-2: #1c1c1f;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --fg: #ededef;
+  --fg-muted: #a1a1aa;
+  --fg-subtle: #71717a;
+
+  --accent: #34d399;
+  --accent-2: #818cf8;
+  --accent-contrast: #05140d;
+  --accent-glow: rgba(52, 211, 153, 0.16);
+
+  --grid-dot: rgba(255, 255, 255, 0.05);
 }
 
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+/* Fixed background: dot grid + soft accent glow. Replaces the star field. */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% 0%, var(--accent-glow), transparent 45%),
+    radial-gradient(circle at 85% 100%, var(--accent-glow), transparent 45%),
+    radial-gradient(var(--grid-dot) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+}
+
+/* Legacy helper kept for any stray usages. */
 .borderBlack {
-  @apply border border-black/10;
+  border: 1px solid var(--border);
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  transition: border-color 0.2s ease;
+}
+.card:hover {
+  border-color: var(--border-strong);
+}
+
+.mono-label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg-subtle);
+}
+
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+.glow-hover:hover {
+  box-shadow:
+    0 0 0 1px var(--accent-glow),
+    0 8px 40px -12px var(--accent-glow);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  transition: transform 0.15s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.04);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  background-color: var(--surface);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fg);
+  transition: transform 0.15s ease;
+}
+.btn-ghost:hover {
+  transform: scale(1.04);
+}
+
+.icon-btn {
+  display: inline-flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--fg-muted);
+  transition: all 0.2s ease;
+}
+.icon-btn:hover {
+  color: var(--fg);
+  transform: scale(1.08);
+  border-color: var(--border-strong);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
 }

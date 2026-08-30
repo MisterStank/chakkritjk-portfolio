@@ -2,24 +2,9 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { skillsData, iconData } from "@/lib/data";
+import { skillGroups } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
-
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
@@ -28,31 +13,36 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      className="mb-24 w-full max-w-4xl scroll-mt-28 sm:mb-32"
     >
-      <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="flex flex-row bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
+      <SectionHeading index="03" kicker="stack">
+        Skills &amp; tools
+      </SectionHeading>
+
+      <div className="grid gap-8 sm:grid-cols-2">
+        {skillGroups.map((group, gi) => (
+          <motion.div
+            key={group.category}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: gi * 0.06 }}
           >
-            {<img 
-              src={`https://skillicons.dev/icons?i=${iconData[index]}`}
-              width='30px'
-              className="mr-3"
-            />}
-            {skill}
-          </motion.li>
+            <p className="mono-label mb-3">{group.category}</p>
+            <ul className="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm text-fg"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

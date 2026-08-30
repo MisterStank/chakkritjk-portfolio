@@ -4,9 +4,13 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FaGithubSquare } from "react-icons/fa";
+import { BsGithub, BsArrowUpRight } from "react-icons/bs";
+import clsx from "clsx";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & {
+  index: number;
+  featured?: boolean;
+};
 
 export default function Project({
   title,
@@ -14,77 +18,87 @@ export default function Project({
   tags,
   imageUrl,
   github,
-  demo
+  demo,
+  featured,
+  index,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0 1", "1.33 1"],
+    offset: ["0 1", "1.15 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.96, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return (
-    <motion.div
+    <motion.article
       ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      style={{ scale, opacity }}
+      className={clsx(
+        "card group flex flex-col overflow-hidden",
+        featured && "sm:col-span-2 sm:flex-row"
+      )}
     >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[22rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <div className="flex flex-row gap-x-3">
-            <a
-              className="bg-white p-4 my-5 text-gray-700 flex items-center text-3xl rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-              href={github}
-              target="_blank"
-            >
-              <FaGithubSquare />
-            </a>
-            <a
-              className="bg-white p-4 my-5 text-gray-700 flex items-center text-md rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-              href={demo}
-              target="_blank"
-            >
-              DEMO
-            </a>
-          </div>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-4 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
-
+      <div
+        className={clsx(
+          "relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-surface-2",
+          featured && "sm:aspect-auto sm:w-1/2 sm:border-b-0 sm:border-r"
+        )}
+      >
         <Image
           src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-48 w-[28.25rem] rounded-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
+          alt={`${title} screenshot`}
+          fill
+          quality={90}
+          sizes="(max-width: 640px) 100vw, 50vw"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
         />
-      </section>
-    </motion.div>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-center gap-2">
+          {featured && (
+            <span className="mono-label text-accent">featured</span>
+          )}
+          <h3 className="text-lg font-semibold text-fg">{title}</h3>
+        </div>
+
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-fg-muted">
+          {description}
+        </p>
+
+        <ul className="mt-4 flex flex-wrap gap-1.5">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-md border border-border bg-surface-2 px-2 py-0.5 font-mono text-[0.7rem] text-fg-subtle"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-5 flex items-center gap-4 text-sm">
+          <a
+            href={github}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-fg-muted transition-colors hover:text-fg"
+          >
+            <BsGithub /> Code
+          </a>
+          {demo && (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-accent transition-colors hover:opacity-80"
+            >
+              Live demo <BsArrowUpRight />
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.article>
   );
 }
