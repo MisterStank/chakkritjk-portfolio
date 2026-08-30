@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsEnvelope } from "react-icons/bs";
 import { contact } from "@/lib/data";
 
 export default function Footer() {
@@ -14,6 +14,13 @@ export default function Footer() {
         </p>
 
         <div className="flex items-center gap-3">
+          <a
+            href={`mailto:${contact.email}`}
+            aria-label="Email"
+            className="icon-btn h-9 w-9"
+          >
+            <BsEnvelope />
+          </a>
           <a
             href={contact.github}
             target="_blank"
@@ -39,8 +46,8 @@ export default function Footer() {
       </div>
 
       <p className="mt-6 font-mono text-xs text-fg-subtle">
-        Built with Next.js, TypeScript, Tailwind CSS, Framer Motion & Resend.
-        Deployed on Vercel.
+        Built with Next.js, TypeScript, Tailwind CSS & Framer Motion. Deployed on
+        Vercel.
       </p>
     </footer>
   );

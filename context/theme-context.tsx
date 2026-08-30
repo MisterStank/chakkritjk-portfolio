@@ -20,13 +20,13 @@ function getInitialTheme(): Theme {
     // The blocking script in layout.tsx has already applied the class.
     return document.documentElement.classList.contains("dark") ? "dark" : "light";
   }
-  return "dark";
+  return "light";
 }
 
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     setTheme(getInitialTheme());

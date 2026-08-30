@@ -28,8 +28,8 @@ export const links = [
   { name: "Projects", hash: "#projects" },
   { name: "Skills", hash: "#skills" },
   { name: "Experience", hash: "#experience" },
+  { name: "Education", hash: "#education" },
   { name: "GitHub", hash: "#github" },
-  { name: "Contact", hash: "#contact" },
 ] as const;
 
 /* -------------------------------------------------------------------------- */
@@ -67,7 +67,7 @@ export const highlightsData = [
 /*  Experience                                                                 */
 /* -------------------------------------------------------------------------- */
 
-export const experiencesData = [
+export const experienceData = [
   {
     title: "Software Engineer Intern",
     location: "Gosoft (Thailand) Co., Ltd. — Online Unit (CPALL)",
@@ -76,9 +76,16 @@ export const experiencesData = [
     icon: React.createElement(LuBriefcase),
     date: "Jun 2024 – Jul 2024",
   },
+] as const;
+
+/* -------------------------------------------------------------------------- */
+/*  Education                                                                  */
+/* -------------------------------------------------------------------------- */
+
+export const educationData = [
   {
     title: "B.Eng. Computer Engineering",
-    location: "Chulalongkorn University",
+    location: "Chulalongkorn University, Bangkok",
     description:
       "Coursework across data structures & algorithms, databases, operating systems, computer networks and software engineering.",
     icon: React.createElement(LuGraduationCap),

@@ -75,7 +75,7 @@ export default async function GithubActivity() {
 
   return (
     <section id="github" className="mb-24 w-full max-w-4xl scroll-mt-28 sm:mb-32">
-      <SectionHeading index="05" kicker="live">
+      <SectionHeading index="06" kicker="live">
         GitHub activity
       </SectionHeading>
 
@@ -144,7 +144,7 @@ export default async function GithubActivity() {
                   </span>
                 )}
               </div>
-              <p className="mt-2 flex-1 text-xs leading-relaxed text-fg-muted">
+              <p className="mt-2 flex-1 text-[0.85rem] leading-[1.6] text-fg-muted">
                 {repo.description ?? "No description"}
               </p>
               {repo.language && (

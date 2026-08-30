@@ -24,7 +24,7 @@ export default function About() {
       </SectionHeading>
 
       <div className="grid gap-10 sm:grid-cols-[1.6fr_1fr]">
-        <div className="space-y-4 text-base leading-relaxed text-fg-muted">
+        <div className="space-y-4 text-[1.0625rem] leading-[1.75] text-fg-muted">
           {aboutData.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
@@ -34,7 +34,7 @@ export default function About() {
           {aboutData.quickFacts.map((fact) => (
             <li key={fact.label} className="border-l border-border pl-4">
               <p className="mono-label">{fact.label}</p>
-              <p className="mt-1 text-sm text-fg">{fact.value}</p>
+              <p className="mt-1 text-[0.9375rem] text-fg">{fact.value}</p>
             </li>
           ))}
         </ul>

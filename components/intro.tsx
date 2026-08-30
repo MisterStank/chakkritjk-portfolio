@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
+import { FiCopy, FiCheck } from "react-icons/fi";
+import copy from "copy-to-clipboard";
+import toast from "react-hot-toast";
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import profileImg from "@/public/luffy.jpg";
 import { intro, contact } from "@/lib/data";
 
@@ -15,7 +16,16 @@ const techChips = ["React", "Next.js", "TypeScript", "Node.js", "Tailwind", "Pos
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [copied, setCopied] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  const copyEmail = () => {
+    if (copy(contact.email)) {
+      setCopied(true);
+      toast.success("Email copied to clipboard");
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <section
@@ -46,7 +56,7 @@ export default function Intro() {
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted sm:text-lg"
+            className="mt-6 max-w-xl text-[1.0625rem] leading-[1.7] text-fg-muted sm:text-lg"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -73,16 +83,28 @@ export default function Intro() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Link
-              href="#contact"
-              onClick={() => {
-                setActiveSection("Contact");
-                setTimeOfLastClick(Date.now());
-              }}
-              className="btn-primary"
+            <button
+              type="button"
+              onClick={copyEmail}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              className="btn-primary min-w-[13rem] justify-center"
+              aria-label={`Copy email address ${contact.email}`}
             >
-              Get in touch
-            </Link>
+              {copied ? (
+                <>
+                  <FiCheck /> Copied!
+                </>
+              ) : hovered ? (
+                <>
+                  <FiCopy /> {contact.email}
+                </>
+              ) : (
+                <>
+                  <FiCopy /> Copy email
+                </>
+              )}
+            </button>
             <a href={contact.resume} download className="btn-ghost">
               Résumé <HiDownload className="opacity-70" />
             </a>

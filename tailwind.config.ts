@@ -27,7 +27,9 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       boxShadow: {
-        glow: "0 0 0 1px var(--accent-glow), 0 8px 40px -12px var(--accent-glow)",
+        glow: "var(--shadow-soft)",
+        soft: "var(--shadow-soft)",
+        hover: "var(--shadow-hover)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

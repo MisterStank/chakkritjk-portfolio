@@ -48,12 +48,11 @@ const themeScript = `
 (function () {
   try {
     var stored = localStorage.getItem('theme');
-    var dark = stored ? stored === 'dark'
+    var dark = stored
+      ? stored === 'dark'
       : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (dark || !stored) document.documentElement.classList.add('dark');
-  } catch (e) {
-    document.documentElement.classList.add('dark');
-  }
+    if (dark) document.documentElement.classList.add('dark');
+  } catch (e) {}
 })();
 `;
 

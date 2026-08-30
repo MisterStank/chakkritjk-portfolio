@@ -18,7 +18,7 @@ export default function Highlights() {
             className="card glow-hover p-5"
           >
             <p className="mono-label mb-2">{item.label}</p>
-            <p className="text-sm leading-relaxed text-fg">{item.value}</p>
+            <p className="text-[0.9375rem] leading-[1.6] text-fg">{item.value}</p>
           </motion.div>
         ))}
       </div>
