@@ -71,6 +71,14 @@ export const highlightsData = [
 
 export const experienceData = [
   {
+    title: "Contract Software Developer",
+    location: "Agoda Company Pte. Ltd.",
+    description:
+      "Help maintain and evolve the company's frontend monorepo — CI/CD pipeline health, monorepo structure and tooling, integration testing strategy, deployment strategy, and developer experience for the 10+ teams building on a large-scale frontend monorepo.",
+    icon: React.createElement(LuBriefcase),
+    date: "Aug 2025 – Aug 2026",
+  },
+  {
     title: "Software Engineer Intern",
     location: "Gosoft (Thailand) Co., Ltd. — Online Unit (CPALL)",
     description:
