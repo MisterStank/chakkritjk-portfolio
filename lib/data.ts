@@ -39,68 +39,27 @@ export const links = [
 /* -------------------------------------------------------------------------- */
 
 export const intro = {
-  kicker: "Computer Engineering · Bangkok, Thailand",
   name: "Chakkrit Jongkraijak",
-  headline: "Full-stack web developer",
-  sub: "Computer Engineering graduate from Chulalongkorn University. Most recently a contract software developer at Agoda, working on their large-scale frontend monorepo. I build fast, accessible web apps with React, Next.js and TypeScript.",
-  status: "Open to software engineer / frontend roles",
 };
-
-export const aboutData = {
-  paragraphs: [
-    "I'm a Computer Engineering graduate from Chulalongkorn University with a strong interest in technology and software development. My focus is full-stack web development — turning ideas into products that are fast, accessible and pleasant to use.",
-    "Most recently I was a contract software developer at Agoda, working on the frontend monorepo — CI/CD, tooling, testing and deployment strategy, and developer experience for the 10+ teams building on it. Earlier, during my internship at Gosoft (Thailand), I contributed to production software in the online unit under CPALL. Across coursework and personal projects I've worked with JavaScript, TypeScript, Python, SQL, C and C++, plus frameworks and tooling around the React ecosystem.",
-  ],
-  quickFacts: [
-    { label: "Location", value: "Bangkok, Thailand" },
-    { label: "Education", value: "B.Eng. Computer Engineering, Chulalongkorn" },
-    { label: "Focus", value: "Full-stack web · React / Next.js" },
-    { label: "Status", value: "Open to work" },
-  ],
-};
-
-export const highlightsData = [
-  { label: "Currently", value: "Building side projects & studying system design" },
-  { label: "Favourite stack", value: "Next.js · TypeScript · Tailwind · Postgres" },
-  { label: "Also into", value: "Clean UI, DX tooling, and a good keyboard" },
-];
 
 /* -------------------------------------------------------------------------- */
 /*  Experience                                                                 */
 /* -------------------------------------------------------------------------- */
 
-export const experienceData = [
-  {
-    title: "Contract Software Developer",
-    location: "Agoda Company Pte. Ltd.",
-    description:
-      "Help maintain and evolve the company's frontend monorepo — CI/CD pipeline health, monorepo structure and tooling, integration testing strategy, deployment strategy, and developer experience for the 10+ teams building on a large-scale frontend monorepo.",
-    icon: React.createElement(LuBriefcase),
-    date: "Aug 2025 – Aug 2026",
-  },
-  {
-    title: "Software Engineer Intern",
-    location: "Gosoft (Thailand) Co., Ltd. — Online Unit (CPALL)",
-    description:
-      "Summer internship on the online unit. Worked alongside the engineering team on internal web tooling and feature work.",
-    icon: React.createElement(LuBriefcase),
-    date: "Jun 2024 – Jul 2024",
-  },
+/* Non-translatable per-entry metadata; parallel to the `experience.items`
+   and `education.items` arrays in lib/i18n.ts (matched by index). */
+
+export const experienceMeta = [
+  { icon: React.createElement(LuBriefcase), logo: "/logos/agoda.svg" },
+  { icon: React.createElement(LuBriefcase), logo: "/logos/gosoft.png" },
 ] as const;
 
 /* -------------------------------------------------------------------------- */
 /*  Education                                                                  */
 /* -------------------------------------------------------------------------- */
 
-export const educationData = [
-  {
-    title: "B.Eng. Computer Engineering",
-    location: "Chulalongkorn University, Bangkok",
-    description:
-      "Coursework across data structures & algorithms, databases, operating systems, computer networks and software engineering.",
-    icon: React.createElement(LuGraduationCap),
-    date: "Graduated 2024",
-  },
+export const educationMeta = [
+  { icon: React.createElement(LuGraduationCap), logo: "/logos/chula.webp" },
 ] as const;
 
 /* -------------------------------------------------------------------------- */

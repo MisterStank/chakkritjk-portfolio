@@ -5,9 +5,11 @@ import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
+import { useLocale } from "@/context/locale-context";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.3);
+  const { t } = useLocale();
 
   return (
     <section
@@ -15,8 +17,8 @@ export default function Projects() {
       id="projects"
       className="mb-24 w-full max-w-4xl scroll-mt-28 sm:mb-32"
     >
-      <SectionHeading index="02" kicker="work">
-        Projects
+      <SectionHeading index="02" kicker={t.projects.kicker}>
+        {t.projects.heading}
       </SectionHeading>
 
       <div className="grid gap-5 sm:grid-cols-2">

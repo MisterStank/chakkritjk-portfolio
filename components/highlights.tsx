@@ -2,13 +2,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { highlightsData } from "@/lib/data";
+import { useLocale } from "@/context/locale-context";
 
 export default function Highlights() {
+  const { t } = useLocale();
+
   return (
     <section className="mb-24 w-full max-w-4xl sm:mb-32">
       <div className="grid gap-4 sm:grid-cols-3">
-        {highlightsData.map((item, i) => (
+        {t.highlights.map((item, i) => (
           <motion.div
             key={item.label}
             initial={{ opacity: 0, y: 20 }}

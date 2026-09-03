@@ -6,10 +6,13 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useLocale } from "@/context/locale-context";
+import LocaleSwitch from "./locale-switch";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+  const { t } = useLocale();
 
   return (
     <header className="fixed inset-x-0 top-0 z-[999] flex justify-center px-4">
@@ -34,7 +37,7 @@ export default function Header() {
                     { "text-fg": activeSection === link.name }
                   )}
                 >
-                  {link.name}
+                  {t.nav[link.name]}
                   {link.name === activeSection && (
                     <motion.span
                       layoutId="activeSection"
@@ -58,6 +61,8 @@ export default function Header() {
         >
           <span className="rounded bg-surface-2 px-1">⌘</span>K
         </button>
+
+        <LocaleSwitch />
       </motion.div>
     </header>
   );

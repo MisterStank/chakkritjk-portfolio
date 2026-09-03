@@ -9,6 +9,7 @@ import { FiCopy, FiCheck } from "react-icons/fi";
 import copy from "copy-to-clipboard";
 import toast from "react-hot-toast";
 import { useSectionInView } from "@/lib/hooks";
+import { useLocale } from "@/context/locale-context";
 import profileImg from "@/public/luffy.jpg";
 import { intro, contact } from "@/lib/data";
 
@@ -16,13 +17,14 @@ const techChips = ["React", "Next.js", "TypeScript", "Node.js", "Tailwind", "Pos
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
+  const { t } = useLocale();
   const [copied, setCopied] = useState(false);
   const [hovered, setHovered] = useState(false);
 
   const copyEmail = () => {
     if (copy(contact.email)) {
       setCopied(true);
-      toast.success("Email copied to clipboard");
+      toast.success(t.hero.emailToast);
       setTimeout(() => setCopied(false), 2000);
     }
   };
@@ -40,7 +42,7 @@ export default function Intro() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            {intro.kicker}
+            {t.hero.kicker}
           </motion.p>
 
           <motion.h1
@@ -49,10 +51,10 @@ export default function Intro() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
           >
-            Hi, I&apos;m {intro.name.split(" ")[0]}
+            {t.hero.greeting} {intro.name.split(" ")[0]}
             <span className="text-accent">.</span>
             <br />
-            <span className="text-fg-muted">{intro.headline}</span>
+            <span className="text-fg-muted">{t.hero.headline}</span>
           </motion.h1>
 
           <motion.p
@@ -61,7 +63,7 @@ export default function Intro() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            {intro.sub}
+            {t.hero.sub}
           </motion.p>
 
           <motion.div
@@ -74,7 +76,7 @@ export default function Intro() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            {intro.status}
+            {t.hero.status}
           </motion.div>
 
           <motion.div
@@ -93,7 +95,7 @@ export default function Intro() {
             >
               {copied ? (
                 <>
-                  <FiCheck /> Copied!
+                  <FiCheck /> {t.hero.copied}
                 </>
               ) : hovered ? (
                 <>
@@ -101,12 +103,12 @@ export default function Intro() {
                 </>
               ) : (
                 <>
-                  <FiCopy /> Copy email
+                  <FiCopy /> {t.hero.copyEmail}
                 </>
               )}
             </button>
             <a href={contact.resume} download className="btn-ghost">
-              Résumé <HiDownload className="opacity-70" />
+              {t.hero.resume} <HiDownload className="opacity-70" />
             </a>
             <a
               href={contact.github}

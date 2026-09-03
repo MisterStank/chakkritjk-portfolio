@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BsGithub, BsArrowUpRight } from "react-icons/bs";
 import clsx from "clsx";
+import { useLocale } from "@/context/locale-context";
 
 type ProjectProps = (typeof projectsData)[number] & {
   index: number;
@@ -22,6 +23,7 @@ export default function Project({
   featured,
   index,
 }: ProjectProps) {
+  const { t } = useLocale();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -59,7 +61,7 @@ export default function Project({
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-center gap-2">
           {featured && (
-            <span className="mono-label text-accent">featured</span>
+            <span className="mono-label text-accent">{t.projects.featured}</span>
           )}
           <h3 className="text-lg font-semibold text-fg">{title}</h3>
         </div>
@@ -86,7 +88,7 @@ export default function Project({
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 text-fg-muted transition-colors hover:text-fg"
           >
-            <BsGithub /> Code
+            <BsGithub /> {t.projects.code}
           </a>
           {demo && (
             <a
@@ -95,7 +97,7 @@ export default function Project({
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 text-accent transition-colors hover:opacity-80"
             >
-              Live demo <BsArrowUpRight />
+              {t.projects.demo} <BsArrowUpRight />
             </a>
           )}
         </div>

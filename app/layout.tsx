@@ -6,6 +6,7 @@ import ThemeSwitch from "@/components/theme-switch";
 import CommandPalette from "@/components/command-palette";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
+import LocaleContextProvider from "@/context/locale-context";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import { contact } from "@/lib/data";
@@ -94,15 +95,19 @@ export default function RootLayout({
       <body className="relative min-h-screen bg-bg font-sans text-fg antialiased">
         <div className="site-bg" aria-hidden="true" />
         <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            <main className="relative z-10 px-4 pt-28 sm:pt-36">{children}</main>
-            <Footer />
-            <ThemeSwitch />
-            <CommandPalette />
-            <Toaster position="bottom-center" reverseOrder={false} />
-            <Analytics />
-          </ActiveSectionContextProvider>
+          <LocaleContextProvider>
+            <ActiveSectionContextProvider>
+              <Header />
+              <main className="relative z-10 px-4 pt-28 sm:pt-36">
+                {children}
+              </main>
+              <Footer />
+              <ThemeSwitch />
+              <CommandPalette />
+              <Toaster position="bottom-center" reverseOrder={false} />
+              <Analytics />
+            </ActiveSectionContextProvider>
+          </LocaleContextProvider>
         </ThemeContextProvider>
       </body>
     </html>

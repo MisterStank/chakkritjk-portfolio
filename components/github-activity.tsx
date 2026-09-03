@@ -1,5 +1,5 @@
 import React from "react";
-import SectionHeading from "./section-heading";
+import GithubHeading from "./github-heading";
 import { BsArrowUpRight, BsStar } from "react-icons/bs";
 import { githubUsername, contact } from "@/lib/data";
 
@@ -75,9 +75,7 @@ export default async function GithubActivity() {
 
   return (
     <section id="github" className="mb-24 w-full max-w-4xl scroll-mt-28 sm:mb-32">
-      <SectionHeading index="06" kicker="live">
-        GitHub activity
-      </SectionHeading>
+      <GithubHeading index="06" />
 
       <div className="card p-5 sm:p-6">
         {contrib ? (

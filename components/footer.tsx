@@ -1,10 +1,14 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { BsGithub, BsLinkedin, BsEnvelope } from "react-icons/bs";
 import { contact } from "@/lib/data";
+import { useLocale } from "@/context/locale-context";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useLocale();
 
   return (
     <footer className="relative z-10 mx-auto mt-24 w-full max-w-5xl border-t border-border px-4 py-10">
@@ -40,15 +44,12 @@ export default function Footer() {
             <BsLinkedin />
           </a>
           <Link href="#home" className="text-sm text-fg-muted hover:text-fg">
-            Back to top
+            {t.footer.backToTop}
           </Link>
         </div>
       </div>
 
-      <p className="mt-6 font-mono text-xs text-fg-subtle">
-        Built with Next.js, TypeScript, Tailwind CSS & Framer Motion. Deployed on
-        Vercel.
-      </p>
+      <p className="mt-6 font-mono text-xs text-fg-subtle">{t.footer.builtWith}</p>
     </footer>
   );
 }
