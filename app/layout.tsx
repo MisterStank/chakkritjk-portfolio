@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import { contact } from "@/lib/data";
 
-const siteUrl = "https://chakkrit-portfolio.vercel.app";
+const siteUrl = "https://chakkritjk-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
