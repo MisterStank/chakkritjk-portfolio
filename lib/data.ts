@@ -42,20 +42,20 @@ export const intro = {
   kicker: "Computer Engineering · Bangkok, Thailand",
   name: "Chakkrit Jongkraijak",
   headline: "Full-stack web developer",
-  sub: "Fresh Computer Engineering graduate from Chulalongkorn University. I build fast, accessible web apps with React, Next.js and TypeScript.",
-  status: "Open to software engineer / frontend roles",
+  sub: "Computer Engineering graduate from Chulalongkorn University, now a contract software developer at Agoda. I build fast, accessible web apps with React, Next.js and TypeScript.",
+  status: "Software developer at Agoda · frontend platform & DX",
 };
 
 export const aboutData = {
   paragraphs: [
-    "I'm a fresh graduate in Computer Engineering from Chulalongkorn University with a strong interest in technology and software development. My focus is full-stack web development — turning ideas into products that are fast, accessible and pleasant to use.",
-    "Across coursework and personal projects I've worked with JavaScript, TypeScript, Python, SQL, C and C++, plus frameworks and tooling around the React ecosystem. During my internship at Gosoft (Thailand) I contributed to production software in the online unit under CPALL.",
+    "I'm a Computer Engineering graduate from Chulalongkorn University with a strong interest in technology and software development. My focus is full-stack web development — turning ideas into products that are fast, accessible and pleasant to use.",
+    "I'm currently a contract software developer at Agoda, working on the frontend monorepo — CI/CD, tooling, testing and deployment strategy, and developer experience for the 10+ teams building on it. Earlier, during my internship at Gosoft (Thailand), I contributed to production software in the online unit under CPALL. Across coursework and personal projects I've worked with JavaScript, TypeScript, Python, SQL, C and C++, plus frameworks and tooling around the React ecosystem.",
   ],
   quickFacts: [
     { label: "Location", value: "Bangkok, Thailand" },
     { label: "Education", value: "B.Eng. Computer Engineering, Chulalongkorn" },
     { label: "Focus", value: "Full-stack web · React / Next.js" },
-    { label: "Status", value: "Open to work" },
+    { label: "Status", value: "Contract software developer at Agoda" },
   ],
 };
 
