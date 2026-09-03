@@ -16,7 +16,7 @@ export default function Projects() {
       className="mb-24 w-full max-w-4xl scroll-mt-28 sm:mb-32"
     >
       <SectionHeading index="02" kicker="work">
-        Selected projects
+        Projects
       </SectionHeading>
 
       <div className="grid gap-5 sm:grid-cols-2">

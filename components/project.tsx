@@ -34,24 +34,25 @@ export default function Project({
     <motion.article
       ref={ref}
       style={{ scale, opacity }}
-      className={clsx(
-        "card group flex flex-col overflow-hidden",
-        featured && "sm:col-span-2 sm:flex-row"
-      )}
+      className="card group flex flex-col overflow-hidden"
     >
-      <div
-        className={clsx(
-          "relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-surface-2",
-          featured && "sm:aspect-auto sm:w-1/2 sm:border-b-0 sm:border-r"
-        )}
-      >
+      <div className="relative aspect-[3/2] w-full overflow-hidden border-b border-border bg-surface-2">
+        <Image
+          src={imageUrl}
+          alt=""
+          aria-hidden
+          fill
+          quality={20}
+          sizes="(max-width: 640px) 100vw, 50vw"
+          className="scale-125 object-cover blur-2xl brightness-75"
+        />
         <Image
           src={imageUrl}
           alt={`${title} screenshot`}
           fill
           quality={90}
           sizes="(max-width: 640px) 100vw, 50vw"
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          className="object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
         />
       </div>
 
