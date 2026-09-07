@@ -52,7 +52,7 @@ export default function CommandPalette() {
         run: () => {
           const a = document.createElement("a");
           a.href = contact.resume;
-          a.download = "Chakkrit_Jongkraijak_resume.pdf";
+          a.download = "Chakkrit_Jongkraijak_Resume.pdf";
           a.rel = "nofollow";
           a.click();
           close();

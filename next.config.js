@@ -13,7 +13,7 @@ const nextConfig = {
         // Keep the résumé (contains a phone number) out of search engines.
         // Crawlers must be allowed to fetch it to see this header, so it is
         // intentionally not disallowed in robots.txt.
-        source: "/resume.pdf",
+        source: "/Chakkrit_Jongkraijak_Resume.pdf",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];

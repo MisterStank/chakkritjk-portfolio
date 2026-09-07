@@ -17,7 +17,7 @@ export const contact = {
   email: "mchakkrit2002@gmail.com",
   github: `https://github.com/${githubUsername}`,
   linkedin: "https://www.linkedin.com/in/chakkrit-jongkraijak/",
-  resume: "/resume.pdf",
+  resume: "/Chakkrit_Jongkraijak_Resume.pdf",
 };
 
 /* -------------------------------------------------------------------------- */

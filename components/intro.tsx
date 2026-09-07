@@ -109,7 +109,7 @@ export default function Intro() {
             </button>
             <a
               href={contact.resume}
-              download="Chakkrit_Jongkraijak_resume.pdf"
+              download="Chakkrit_Jongkraijak_Resume.pdf"
               rel="nofollow"
               className="btn-ghost"
             >
