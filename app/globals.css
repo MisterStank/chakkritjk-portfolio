@@ -7,10 +7,10 @@
    dark is a full override via `html.dark`.
 --------------------------------------------------------------------------- */
 :root {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, ui-sans-serif,
-    "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
-    Menlo, Consolas, monospace;
+  --font-sans: "Inter", "Anuphan", -apple-system, BlinkMacSystemFont,
+    ui-sans-serif, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "Anuphan", ui-monospace, SFMono-Regular,
+    "SF Mono", Menlo, Consolas, monospace;
 
   /* Soft off-white base (no glaring pure white); text stays dark for readability. */
   --bg: #f6f6f4;

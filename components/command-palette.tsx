@@ -50,7 +50,11 @@ export default function CommandPalette() {
         label: "Download résumé",
         hint: "file",
         run: () => {
-          window.open(contact.resume, "_blank");
+          const a = document.createElement("a");
+          a.href = contact.resume;
+          a.download = "Chakkrit_Jongkraijak_resume.pdf";
+          a.rel = "nofollow";
+          a.click();
           close();
         },
       },

@@ -68,6 +68,16 @@ export const educationMeta = [
 
 export const projectsData = [
   {
+    title: "EatRai",
+    description:
+      "A restaurant finder with a Tinder-style swipe deck — point it at your location, filter by cuisine, swipe through nearby places and open the ones you like in Maps. No accounts: right-swipes are saved on-device. React Native (Expo) app over a thin stateless Go proxy on Google Places.",
+    tags: ["React Native", "Expo", "TypeScript", "Go", "Zustand", "Reanimated"],
+    imageUrl: eatraiImg,
+    github: "https://github.com/MisterStank/EatRai",
+    demo: "https://eatrai.help",
+    featured: true,
+  },
+  {
     title: "Gymon",
     description:
       "A workout tracker with a Tamagotchi-style twist: a virtual companion hatches on your first workout and evolves as you keep a streak. Offline-first logging, adaptive program generation and live analytics. Flutter client, Go/GraphQL backend, Postgres and Redis.",
@@ -76,15 +86,6 @@ export const projectsData = [
     github: "https://github.com/MisterStank/WorkoutTracker",
     demo: "https://gymon-web.chakkritchongkraichak.workers.dev/",
     featured: true,
-  },
-  {
-    title: "EatRai",
-    description:
-      "A restaurant finder with a Tinder-style swipe deck — point it at your location, filter by cuisine, swipe through nearby places and open the ones you like in Maps. No accounts: right-swipes are saved on-device. React Native (Expo) app over a thin stateless Go proxy on Google Places.",
-    tags: ["React Native", "Expo", "TypeScript", "Go", "Zustand", "Reanimated"],
-    imageUrl: eatraiImg,
-    github: "https://github.com/MisterStank/EatRai",
-    demo: "https://eatrai.help",
   },
   {
     title: "Products Store",
@@ -131,18 +132,45 @@ export const projectsData = [
 export const skillGroups = [
   {
     category: "Languages",
-    items: ["JavaScript", "TypeScript", "Python", "C", "C++", "SQL"],
+    items: ["TypeScript", "JavaScript", "Go", "Dart", "Python", "SQL", "C", "C++", "HTML", "CSS"],
   },
   {
     category: "Frontend",
-    items: ["React", "Next.js", "Tailwind CSS", "MUI", "HTML", "CSS"],
+    items: [
+      "React",
+      "Next.js",
+      "React Native (Expo)",
+      "Flutter",
+      "Redux",
+      "Zustand",
+      "Riverpod",
+      "Tailwind CSS",
+      "MUI",
+      "Framer Motion",
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "MySQL", "MongoDB", "PostgreSQL"],
+    items: ["Go", "Node.js", "Express", "GraphQL (gqlgen)", "REST APIs"],
   },
   {
-    category: "Tools",
-    items: ["Git", "GitHub", "Postman", "VS Code", "Figma", "AWS"],
+    category: "Databases",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+  },
+  {
+    category: "DevOps & Infra",
+    items: [
+      "Docker",
+      "docker-compose",
+      "GitHub Actions",
+      "GitLab CI/CD",
+      "Vercel",
+      "Cloudflare Workers",
+      "Nx",
+    ],
+  },
+  {
+    category: "Testing",
+    items: ["Jest", "Go unit & integration testing", "SQL migrations"],
   },
 ] as const;

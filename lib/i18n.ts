@@ -56,7 +56,15 @@ export type Dictionary = {
     heading: string;
     items: TimelineEntry[];
   };
-  github: { kicker: string; heading: string };
+  github: {
+    kicker: string;
+    heading: string;
+    contributions: string;
+    publicActivity: string;
+    noDescription: string;
+    graphErrorPrefix: string;
+    viewOnGithub: string;
+  };
   footer: { backToTop: string; builtWith: string };
 };
 
@@ -74,19 +82,19 @@ const en: Dictionary = {
     kicker: "Computer Engineering · Bangkok, Thailand",
     greeting: "Hi, I'm",
     headline: "Full-stack web developer",
-    sub: "Computer Engineering graduate from Chulalongkorn University. Most recently a contract software developer at Agoda, working on their large-scale frontend monorepo. I build fast, accessible web apps with React, Next.js and TypeScript.",
+    sub: "Computer Engineering graduate from Chulalongkorn University. Most recently a contract software developer at Agoda, working on their large-scale frontend monorepo. I build fast, accessible web apps with React, Next.js, TypeScript and more.",
     status: "Open to software engineer / frontend roles",
     copyEmail: "Copy email",
     copied: "Copied!",
     emailToast: "Email copied to clipboard",
-    resume: "Résumé",
+    resume: "Resume",
   },
   about: {
     kicker: "about",
     heading: "A bit about me",
     paragraphs: [
       "I'm a Computer Engineering graduate from Chulalongkorn University with a strong interest in technology and software development. My focus is full-stack web development — turning ideas into products that are fast, accessible and pleasant to use.",
-      "Most recently I was a contract software developer at Agoda, working on the frontend monorepo — CI/CD, tooling, testing and deployment strategy, and developer experience for the 10+ teams building on it. Earlier, during my internship at Gosoft (Thailand), I contributed to production software in the online unit under CPALL. Across coursework and personal projects I've worked with JavaScript, TypeScript, Python, SQL, C and C++, plus frameworks and tooling around the React ecosystem.",
+      "Most recently I was a contract software developer at Agoda, working on the frontend monorepo — CI/CD, tooling, testing and deployment strategy, and developer experience for the 10+ teams building on it. Earlier, during my internship at Gosoft (Thailand), I contributed to production software in the online unit under CPALL. Across coursework and personal projects I've worked with TypeScript, JavaScript, Go, Dart, SQL, C and C++, plus the React and Flutter ecosystems.",
     ],
     quickFacts: [
       { label: "Location", value: "Bangkok, Thailand" },
@@ -114,7 +122,9 @@ const en: Dictionary = {
       Languages: "Languages",
       Frontend: "Frontend",
       Backend: "Backend",
-      Tools: "Tools",
+      Databases: "Databases",
+      "DevOps & Infra": "DevOps & Infra",
+      Testing: "Testing",
     },
   },
   experience: {
@@ -125,14 +135,14 @@ const en: Dictionary = {
         title: "Contract Software Developer",
         location: "Agoda Company Pte. Ltd.",
         description:
-          "Help maintain and evolve the company's frontend monorepo — CI/CD pipeline health, monorepo structure and tooling, integration testing strategy, deployment strategy, and developer experience for the 10+ teams building on a large-scale frontend monorepo.",
+          "Worked on the company's large-scale frontend monorepo used by 10+ product teams — CI/CD pipeline health, monorepo structure and build tooling, integration-testing and CI strategy for shared frontend code, and internal tooling that streamlined the local and CI developer experience.",
         date: "Aug 2025 – Aug 2026",
       },
       {
         title: "Software Engineer Intern",
         location: "Gosoft (Thailand) Co., Ltd. — Online Unit (CPALL)",
         description:
-          "Summer internship on the online unit. Worked alongside the engineering team on internal web tooling and feature work.",
+          "Summer internship on the online unit under CPALL. Designed and developed web application features on both front-end and back-end with the engineering team under an Agile workflow.",
         date: "Jun 2024 – Jul 2024",
       },
     ],
@@ -150,7 +160,15 @@ const en: Dictionary = {
       },
     ],
   },
-  github: { kicker: "live", heading: "GitHub activity" },
+  github: {
+    kicker: "live",
+    heading: "GitHub activity",
+    contributions: "contributions in the last year",
+    publicActivity: "public activity",
+    noDescription: "No description",
+    graphErrorPrefix: "Couldn't load the contribution graph right now — ",
+    viewOnGithub: "view it on GitHub",
+  },
   footer: {
     backToTop: "Back to top",
     builtWith:
@@ -172,19 +190,19 @@ const th: Dictionary = {
     kicker: "วิศวกรรมคอมพิวเตอร์ · กรุงเทพฯ ประเทศไทย",
     greeting: "สวัสดีครับ ผม",
     headline: "นักพัฒนาเว็บแบบ Full-stack",
-    sub: "บัณฑิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย ล่าสุดทำงานเป็น Contract Software Developer ที่ Agoda ดูแล frontend monorepo ขนาดใหญ่ของบริษัท ผมสร้างเว็บแอปที่เร็ว เข้าถึงง่าย ด้วย React, Next.js และ TypeScript",
+    sub: "บัณฑิตจากคณะวิศวกรรมศาสตร์ ภาควิชาวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย ล่าสุดทำงานเป็น Contract Software Developer ที่ Agoda ดูแล frontend monorepo ขนาดใหญ่ของบริษัท ผมสร้างเว็บแอปที่เร็ว เข้าถึงง่าย ด้วย React, Next.js, TypeScript และเทคโนโลยีอื่น ๆ",
     status: "กำลังมองหาโอกาสงานสาย Software Engineer / Frontend",
     copyEmail: "คัดลอกอีเมล",
     copied: "คัดลอกแล้ว!",
     emailToast: "คัดลอกอีเมลแล้ว",
-    resume: "เรซูเม่",
+    resume: "Resume",
   },
   about: {
     kicker: "เกี่ยวกับ",
     heading: "เกี่ยวกับผม",
     paragraphs: [
       "ผมเป็นบัณฑิตวิศวกรรมคอมพิวเตอร์ จากจุฬาลงกรณ์มหาวิทยาลัย ที่สนใจด้านเทคโนโลยีและการพัฒนาซอฟต์แวร์เป็นอย่างมาก ผมโฟกัสที่การพัฒนาเว็บแบบ full-stack เปลี่ยนไอเดียให้กลายเป็นผลิตภัณฑ์ที่เร็ว เข้าถึงง่าย และใช้งานได้อย่างลื่นไหล",
-      "ล่าสุดผมทำงานเป็น Contract Software Developer ที่ Agoda ดูแล frontend monorepo ทั้งเรื่อง CI/CD, เครื่องมือ, กลยุทธ์การทดสอบและการ deploy รวมถึง developer experience สำหรับทีมกว่า 10 ทีมที่พัฒนาอยู่บนนั้น ก่อนหน้านั้นระหว่างฝึกงานที่ Gosoft (Thailand) ผมได้มีส่วนร่วมพัฒนาซอฟต์แวร์ที่ใช้งานจริงในหน่วยออนไลน์ภายใต้ CPALL นอกจากนี้จากการเรียนและโปรเจกต์ส่วนตัว ผมได้ใช้ JavaScript, TypeScript, Python, SQL, C และ C++ รวมถึงเฟรมเวิร์กและเครื่องมือรอบ ๆ React ecosystem",
+      "ล่าสุดผมทำงานเป็น Contract Software Developer ที่ Agoda ดูแล frontend monorepo ทั้งเรื่อง CI/CD, เครื่องมือ, กลยุทธ์การทดสอบและการ deploy รวมถึง developer experience สำหรับทีมกว่า 10 ทีมที่พัฒนาอยู่บนนั้น ก่อนหน้านั้นระหว่างฝึกงานที่ Gosoft (Thailand) ผมได้มีส่วนร่วมพัฒนาซอฟต์แวร์ที่ใช้งานจริงในหน่วยออนไลน์ภายใต้ CPALL นอกจากนี้จากการเรียนและโปรเจกต์ส่วนตัว ผมได้ใช้ TypeScript, JavaScript, Go, Dart, SQL, C และ C++ รวมถึง ecosystem ของ React และ Flutter",
     ],
     quickFacts: [
       { label: "ที่อยู่", value: "กรุงเทพฯ ประเทศไทย" },
@@ -212,7 +230,9 @@ const th: Dictionary = {
       Languages: "ภาษาโปรแกรม",
       Frontend: "Frontend",
       Backend: "Backend",
-      Tools: "เครื่องมือ",
+      Databases: "ฐานข้อมูล",
+      "DevOps & Infra": "DevOps & Infra",
+      Testing: "การทดสอบ",
     },
   },
   experience: {
@@ -223,14 +243,14 @@ const th: Dictionary = {
         title: "Contract Software Developer",
         location: "Agoda Company Pte. Ltd.",
         description:
-          "ช่วยดูแลและพัฒนา frontend monorepo ของบริษัท ทั้งความเสถียรของ CI/CD pipeline, โครงสร้างและเครื่องมือของ monorepo, กลยุทธ์การทำ integration testing, กลยุทธ์การ deploy และ developer experience สำหรับทีมกว่า 10 ทีมที่พัฒนาอยู่บน frontend monorepo ขนาดใหญ่",
+          "ทำงานกับ frontend monorepo ขนาดใหญ่ของบริษัทที่มีทีมพัฒนากว่า 10 ทีมใช้งาน — ดูแลความเสถียรของ CI/CD pipeline, โครงสร้างและเครื่องมือ build ของ monorepo, กลยุทธ์ integration testing และ CI สำหรับโค้ด frontend ที่ใช้ร่วมกัน รวมถึงสร้างเครื่องมือภายในที่ช่วยให้ developer experience ทั้งบนเครื่องและใน CI ราบรื่นขึ้น",
         date: "ส.ค. 2025 – ส.ค. 2026",
       },
       {
         title: "Software Engineer Intern",
         location: "Gosoft (Thailand) Co., Ltd. — หน่วยออนไลน์ (CPALL)",
         description:
-          "ฝึกงานภาคฤดูร้อนกับหน่วยออนไลน์ ทำงานร่วมกับทีมวิศวกรรมด้านเครื่องมือเว็บภายในและการพัฒนาฟีเจอร์",
+          "ฝึกงานภาคฤดูร้อนกับหน่วยออนไลน์ภายใต้ CPALL ออกแบบและพัฒนาฟีเจอร์ของเว็บแอปพลิเคชันทั้งฝั่ง front-end และ back-end ร่วมกับทีมวิศวกรรมภายใต้กระบวนการแบบ Agile",
         date: "มิ.ย. 2024 – ก.ค. 2024",
       },
     ],
@@ -248,7 +268,15 @@ const th: Dictionary = {
       },
     ],
   },
-  github: { kicker: "live", heading: "GitHub activity" },
+  github: {
+    kicker: "live",
+    heading: "GitHub activity",
+    contributions: "การมีส่วนร่วมในปีที่ผ่านมา",
+    publicActivity: "กิจกรรมสาธารณะบน GitHub",
+    noDescription: "ไม่มีคำอธิบาย",
+    graphErrorPrefix: "โหลดกราฟการมีส่วนร่วมไม่ได้ในขณะนี้ — ",
+    viewOnGithub: "ดูบน GitHub",
+  },
   footer: {
     backToTop: "กลับขึ้นด้านบน",
     builtWith:

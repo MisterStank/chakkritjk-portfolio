@@ -107,7 +107,12 @@ export default function Intro() {
                 </>
               )}
             </button>
-            <a href={contact.resume} download className="btn-ghost">
+            <a
+              href={contact.resume}
+              download="Chakkrit_Jongkraijak_resume.pdf"
+              rel="nofollow"
+              className="btn-ghost"
+            >
               {t.hero.resume} <HiDownload className="opacity-70" />
             </a>
             <a
