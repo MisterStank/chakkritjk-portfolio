@@ -156,7 +156,7 @@ const en: Dictionary = {
         location: "Chulalongkorn University, Bangkok",
         description:
           "Coursework across data structures & algorithms, databases, operating systems, computer networks and software engineering.",
-        date: "Graduated 2024",
+        date: "Graduated 2025",
       },
     ],
   },
@@ -264,7 +264,7 @@ const th: Dictionary = {
         location: "จุฬาลงกรณ์มหาวิทยาลัย กรุงเทพฯ",
         description:
           "เรียนครอบคลุมทั้งโครงสร้างข้อมูลและอัลกอริทึม ฐานข้อมูล ระบบปฏิบัติการ เครือข่ายคอมพิวเตอร์ และวิศวกรรมซอฟต์แวร์",
-        date: "จบการศึกษา 2024",
+        date: "จบการศึกษา 2025",
       },
     ],
   },
